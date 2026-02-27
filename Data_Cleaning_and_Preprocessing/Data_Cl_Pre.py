@@ -3,9 +3,9 @@ from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import StandardScaler,OneHotEncoder
 from sklearn.compose import ColumnTransformer
 
-def data_prepration_cat_con(X,cat,con):
+def data_prepration_cat_con(X):
 
-    cat = list(X.select_dtypes(include='str').columns)
+    cat = list(X.select_dtypes(include='category').columns) # include='str'
     con = list(X.select_dtypes(include='number').columns)
 
     num_pipe = make_pipeline(
